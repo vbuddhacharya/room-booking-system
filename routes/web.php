@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/login',[UserController::class,'loginView'])->name('login');
+Route::post('login-verification',[UserController::class,'login'])->name('verify');
+Route::post('register-account',[UserController::class,'store'])->name('register');
+Route::get('/hotel/home',[UserController::class,'homeView'])->name('home');
