@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 
-class UserController extends Controller
+class RoomController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,12 +34,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request);
-        $newUser = new User();
-        $newUser->name = $request->name;
-        $newUser->email = $request->email;
-        $newUser->password = bcrypt($request->password);
-        $newUser->save();
+        //
     }
 
     /**
@@ -87,31 +80,5 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
-    }
-    public function loginView(){
-        return view('login');
-    }
-    public function login(Request $request){
-        //dd($request);
-        $credentials = ($request->except('_token'));
-        if (Auth::attempt($credentials)){
-            $request->session()->regenerate();
-            return redirect()->route('home');
-        }
-        else{
-            return redirect()->route('login');
-        }
-    }
-    public function logout(Request $request){
-       Auth::logout();
-        $request->session()->invalidate();
-        return redirect()->route('login');
-
-    }
-    public function homeView(){
-        return view('index');
-    }
-    public function adminView(){
-        return view('admin');
     }
 }

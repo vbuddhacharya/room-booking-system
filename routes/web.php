@@ -21,3 +21,5 @@ Route::get('/login',[UserController::class,'loginView'])->name('login');
 Route::post('login-verification',[UserController::class,'login'])->name('verify');
 Route::post('register-account',[UserController::class,'store'])->name('register');
 Route::get('/hotel/home',[UserController::class,'homeView'])->name('home');
+Route::get('/logout',[UserController::class,'logout'])->name('logout');
+Route::get('/admin-panel',[UserController::class,'adminView'])->name('admin');
