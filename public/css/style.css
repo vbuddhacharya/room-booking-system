@@ -29,6 +29,12 @@ body {
     float: right;
     margin-right: 20px;
   }
+  .username{
+    float: left;
+    display: block;
+    padding: 14px;
+    text-align: center;
+  }
   
   #navbar a:hover {
     background-color: #8A191D;
@@ -352,5 +358,10 @@ body {
   color: white;
   text-decoration: none;
 }
-
+/*admin*/
+.dash{
+  width: 100%;
+    margin:20px 50px;
+    display: flex;
+}
 /**/

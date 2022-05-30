@@ -5,28 +5,38 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>index</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="{{asset('css/style.css')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
 
     </head>
     <body>
         <div id="navbar">
-            <img src="logoillustration/mainlogo.png">
-            <a href="index.html">Home</a>
+            <img src="{{asset('images/logoillustration/mainlogo.png')}}">
+            <a href="{{route('home')}}">Home</a>
             <a href="#rooms">Rooms</a>
             <a href="services.html">Services</a>
             <a href="gallery.html">Gallery</a>
-            <a href="login.html">Book Now</a>
+            <a href="">Book Now</a>
+            @if(Auth::check() && Auth::user()->isAdmin==1)
+                <a href = "{{route('admin')}}">Administrator</a>
+            @endif
+            @if (Auth::check())
+                <div class = "nav-login">
+                    <span class = "username"><i class="fa fa-fw fa-user"></i>{{Auth::user()->name}}</span>
+                    <a href="{{route('logout')}}">Logout</a>
+                </div>
+            @else
             <div class="nav-login">
-                <a href="login.html"><i class="fa fa-fw fa-user"></i>Login/Register</a>
+                <a href="{{route('login')}}"><i class="fa fa-fw fa-user"></i>Login/Register</a>
             </div>
+            @endif
         </div>
 
         <div class="content">
             <div class="banner">
                 <div class="banner-content">
-                    <img src="images/banner1.jpg" width="100%">
+                    <img src="{{asset('images/hotel/banner1.jpg')}}" width="100%">
                 </div>
             </div>
             
@@ -39,11 +49,11 @@
                     </div>
                     <div class="row">
                         <div class="column1">
-                            <img src="images/w1.jpg">
-                            <img src="images/w2.jpg">
+                            <img src="{{asset('images/hotel/w1.jpg')}}">
+                            <img src="{{asset('images/hotel/w2.jpg')}}">
                         </div>
                         <div class="column2">    
-                            <img src="images/w3.jpg">
+                            <img src="{{asset('images/hotel/w3.jpg')}}">
                         </div>
                     </div>
                 </div>
@@ -55,17 +65,17 @@
                 </div>
                 <div class="room-details">
                     <div class="room1">
-                        <img src="images/standardroom.jpg">
+                        <img src="{{asset('images/hotel/standardroom.jpg')}}">
                         <h5>Standard Room</h5>
                         <p>Enjoy your stay in our inspired standard rooms. It comes with comfortable king size bed or double bed including 43" Smart LED TV, bathtub and independent high speed Wi-Fi.</p>
                     </div>
                     <div class="room2">
-                        <img src="images/deluxeroom.jpg">
+                        <img src="{{asset('images/hotel/deluxeroom.jpg')}}">
                         <h5>Deluxe Room</h5>
                         <p>Enjoy an amazing stay in our cozy & comfortable deluxe rooms. It comes with single, double & twin bed including 43" Smart LED TV, bathtub & independent high speed Wi-Fi.</p>
                     </div>
                     <div class="room3">
-                        <img src="images/juniorsuiteroom.jpg">
+                        <img src="{{asset('images/hotel/juniorsuiteroom.jpg')}}">
                         <h5>Suite Room</h5>
                         <p>Suite Room for our vip guest, also available for family tourist including 55" Smart LED TV, bathtub & independent high speed Wi-Fi.</p>
                     </div>
@@ -82,21 +92,21 @@
                 <div class="row">
                     <div class="restaurant">
                         <div class="img">
-                            <img src="servicesphotos/restaurant.png" height="65px" width="65px">
+                            <img src="{{asset('images/servicesphotos/restaurant.png')}}" height="65px" width="65px">
                         </div>
                         <h5>Restaurant</h5>
                         <p>We are proud to present our speciality restaurants.</p>
                     </div>
                     <div class="swimming">
                         <div class="img">
-                            <img src="servicesphotos/swimmingpool.png" height="80px" width="80px">
+                            <img src="{{asset('images/servicesphotos/swimmingpool.png')}}" height="80px" width="80px">
                         </div>
                         <h5>Swimming Pool</h5>
                         <p>One of the best cardio workouts or aerobic exercises you can do</p>
                     </div>
                     <div class="eventroom">
                         <div class="img">
-                            <img src="servicesphotos/eventroom.png" height="80px" width="80px">
+                            <img src="{{asset('images/servicesphotos/eventroom.png')}}" height="80px" width="80px">
                         </div>
                         <h5>Event Room</h5>
                         <p>Our goal is to make your event as simple and seamless as possible</p>
