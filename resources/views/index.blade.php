@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
+
     </head>
     <body>
         <div id="navbar">
@@ -50,17 +51,28 @@
 
             <div class="rooms">
                 <div class="rooms-title">
-                    <h1><font color="#8A191D">Rooms</font></h1>
+                    <h1><font color="#8A191D">Our Rooms</font></h1>
                 </div>
                 <div class="room-details">
                     <div class="room1">
                         <img src="images/standardroom.jpg">
+                        <h5>Standard Room</h5>
+                        <p>Enjoy your stay in our inspired standard rooms. It comes with comfortable king size bed or double bed including 43" Smart LED TV, bathtub and independent high speed Wi-Fi.</p>
                     </div>
                     <div class="room2">
                         <img src="images/deluxeroom.jpg">
+                        <h5>Deluxe Room</h5>
+                        <p>Enjoy an amazing stay in our cozy & comfortable deluxe rooms. It comes with single, double & twin bed including 43" Smart LED TV, bathtub & independent high speed Wi-Fi.</p>
                     </div>
                     <div class="room3">
                         <img src="images/juniorsuiteroom.jpg">
+                        <h5>Suite Room</h5>
+                        <p>Suite Room for our vip guest, also available for family tourist including 55" Smart LED TV, bathtub & independent high speed Wi-Fi.</p>
+                    </div>
+                    <div class="btndiv">
+                        <button class="btn1" type="submit" name="button">
+                            <font color="white">See More</font>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -69,14 +81,31 @@
                 <h1><font color="#8A191D">Our Services</font></h1>
                 <div class="row">
                     <div class="restaurant">
-                        <img src="images/restaurant.png" height="120px" width="120px">
+                        <div class="img">
+                            <img src="servicesphotos/restaurant.png" height="65px" width="65px">
+                        </div>
+                        <h5>Restaurant</h5>
+                        <p>We are proud to present our speciality restaurants.</p>
                     </div>
                     <div class="swimming">
-                        <img src="images/swimming.png" height="80px" width="80px">
+                        <div class="img">
+                            <img src="servicesphotos/swimmingpool.png" height="80px" width="80px">
+                        </div>
+                        <h5>Swimming Pool</h5>
+                        <p>One of the best cardio workouts or aerobic exercises you can do</p>
                     </div>
                     <div class="eventroom">
-                        <img src="images/eventroom.png" height="80px" width="80px">
+                        <div class="img">
+                            <img src="servicesphotos/eventroom.png" height="80px" width="80px">
+                        </div>
+                        <h5>Event Room</h5>
+                        <p>Our goal is to make your event as simple and seamless as possible</p>
                     </div>
+                </div>
+                <div class="btndiv">
+                    <button class="btn2" type="submit" name="button">
+                        <font color="white">See More</font>
+                    </button>
                 </div>
             </div>
 
@@ -103,7 +132,7 @@
                           <div class="form-group">
                             <textarea class="form-control" name="" rows="3" placeholder="Message"></textarea>
                           </div>
-                          <button class="btn" type="submit" name="button">
+                          <button class="btn3" type="submit" name="button">
                             <font color="white">Send Message</font>
                           </button>
                         </form>
