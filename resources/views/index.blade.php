@@ -70,21 +70,22 @@
                         <img src="{{asset('images/hotel/standardroom.jpg')}}">
                         <h5>Standard Room</h5>
                         <p>Enjoy your stay in our inspired standard rooms. It comes with comfortable king size bed or double bed including 43" Smart LED TV, bathtub and independent high speed Wi-Fi.</p>
+                        <a href="" target="_self" class="booknow-btn">Book Now</a>
                     </div>
                     <div class="room2">
                         <img src="{{asset('images/hotel/deluxeroom.jpg')}}">
                         <h5>Deluxe Room</h5>
                         <p>Enjoy an amazing stay in our cozy & comfortable deluxe rooms. It comes with single, double & twin bed including 43" Smart LED TV, bathtub & independent high speed Wi-Fi.</p>
+                        <a href="" target="_self" class="booknow-btn">Book Now</a>
                     </div>
                     <div class="room3">
                         <img src="{{asset('images/hotel/juniorsuiteroom.jpg')}}">
                         <h5>Suite Room</h5>
-                        <p>Suite Room for our vip guest, also available for family tourist including 55" Smart LED TV, bathtub & independent high speed Wi-Fi.</p>
+                        <p>Enjoy an amazing stay in our comfortable suite room for our vip guest. It is now also available for family tourist including 55" Smart LED TV, bathtub & independent high speed Wi-Fi.</p>
+                        <a href="" target="_self" class="booknow-btn">Book Now</a>
                     </div>
                     <div class="btndiv">
-                        <button class="btn1" type="submit" name="button">
-                            <font color="white">See More</font>
-                        </button>
+                        <a href="" target="_self" class="btn1">See More</a>
                     </div>
                 </div>
             </div>
@@ -115,11 +116,7 @@
                     </div>
                 </div>
                 <div class="btndiv">
-                    <form action="{{route('services')}}">
-                        <button class="btn2" name="button">
-                           <font color="white">See More</font>
-                        </button>
-                    </form>
+                    <a href="{{route('services')}}" target="_self" class="btn2">See More</a>
                 </div>
             </div>
 
