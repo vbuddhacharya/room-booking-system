@@ -142,4 +142,7 @@ class UserController extends Controller
     public function servicesView(){
         return view('services');
     }
+    public function galleryView(){
+        return view('gallery');
+    }
 }

@@ -36,3 +36,4 @@ Route::post('/user/update/{id}',[UserController::class,'update'])->name('update.
 Route::get('/admin/add',[UserController::class,'create'])->name('add.admin');
 //Route::post('/admin/customer/delete/{id}',[UserController::class,'destroy'])->name('delete.admin');
 Route::get('/hotel/services',[UserController::class,'servicesView'])->name('services');
+Route::get('/hotel/gallery',[UserController::class,'galleryView'])->name('gallery');

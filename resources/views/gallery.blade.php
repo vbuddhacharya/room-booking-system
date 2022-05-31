@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="{{asset('css/gallery.css')}}">
     <title>Gallery</title>
 </head>
 <body>
     <div class="banner">
-        <img src="servicesphotos/servicebg.jpg" width="1864px">
+        <img src="{{asset('images/servicesphotos/servicebg.jpg')}}" width="1864px">
         <div class="logo">
-            <img src="logoillustration/mainlogo.png" width="230px" height="270px">
+            <img src="{{asset('images/logoillustration/mainlogo.png')}}" width="230px" height="270px">
         </div>
     </div>
     <section class="photo" id="Photo">
@@ -37,53 +37,53 @@
   
                     <div class="item" data-id="Rooms">
                         <div class="inner">
-                            <img src="galleryphotos/room1.jpg" alt="error">
-                            <img src="galleryphotos/room2.jpg" alt="error">
-                            <img src="galleryphotos/room3.jpg" alt="error">
-                            <img src="galleryphotos/room4.jpg" alt="error">
-                            <img src="galleryphotos/room5.jpg" alt="error">
-                            <img src="galleryphotos/room6.jpg" alt="error">
-                            <img src="galleryphotos/room7.jpg" alt="error">
-                            <img src="galleryphotos/room8.jpg" alt="error">
-                            <img src="galleryphotos/room9.jpg" alt="error">
-                            <img src="galleryphotos/room10.jpg" alt="error">
-                            <img src="galleryphotos/room11.jpg" alt="error">
-                            <img src="galleryphotos/room12.jpg" alt="error">
-                            <img src="galleryphotos/room13.jpg" alt="error">
-                            <img src="galleryphotos/room14.jpg" alt="error">
+                            <img src="{{asset('images/galleryphotos/room1.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/room2.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/room3.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/room4.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/room5.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/room6.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/room7.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/room8.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/room9.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/room10.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/room11.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/room12.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/room13.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/room14.jpg')}}" alt="error">
                         </div>
                     </div>
   
                     <div class="item" data-id="Restaurant">
                         <div class="inner">
-                            <img src="galleryphotos/res1.jpg" alt="error">
-                            <img src="galleryphotos/res2.jpg" alt="error">
-                            <img src="galleryphotos/res3.jpg" alt="error">
-                            <img src="galleryphotos/res4.jpg" alt="error">
-                            <img src="galleryphotos/res5.jpg" alt="error">
-                            <img src="galleryphotos/res6.jpg" alt="error">
-                            <img src="galleryphotos/res7.jpg" alt="error">
-                            <img src="galleryphotos/res8.jpg" alt="error">
+                            <img src="{{asset('images/galleryphotos/res1.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/res2.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/res3.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/res4.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/res5.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/res6.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/res7.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/res8.jpg')}}" alt="error">
                         </div>
                     </div>
   
                     <div class="item" data-id="Event-Rooms">
                         <div class="inner">
-                            <img src="galleryphotos/con1.jpg" alt="error">
-                            <img src="galleryphotos/con2.jpg" alt="error">
-                            <img src="galleryphotos/con3.jpg" alt="error">
-                            <img src="galleryphotos/con4.jpg" alt="error">
-                            <img src="galleryphotos/con5.jpg" alt="error">
+                            <img src="{{asset('images/galleryphotos/con1.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/con2.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/con3.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/con4.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/con5.jpg')}}" alt="error">
                         </div>
                     </div>
   
                     <div class="item" data-id="Interiors">
                         <div class="inner">
-                            <img src="galleryphotos/in1.jpg" alt="error">
-                            <img src="galleryphotos/in2.jpg" alt="error">
-                            <img src="galleryphotos/in3.jpg" alt="error">
-                            <img src="galleryphotos/in4.jpg" alt="error">
-                            <img src="galleryphotos/in5.jpg" alt="error">
+                            <img src="{{asset('images/galleryphotos/in1.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/in2.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/in3.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/in4.jpg')}}" alt="error">
+                            <img src="{{asset('images/galleryphotos/in5.jpg')}}" alt="error">
                         </div>
                     </div>
   
