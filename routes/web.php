@@ -30,4 +30,9 @@ Route::post('/admin/room/delete/{id}',[RoomController::class,'destroy'])->name('
 Route::get('/admin/room/add',[RoomController::class,'create'])->name('add.room');
 Route::post('/admin/room/create',[RoomController::class,'store'])->name('create.room');
 Route::post('/admin/customer/view/{id}',[BookingController::class,'view'])->name('view.booking');
-Route::post('/admin/customer/delete/{id}',[UserController::class,'destroy'])->name('delete.cust');
+Route::post('/admin/user/delete/{id}',[UserController::class,'destroy'])->name('delete.user');
+Route::get('/user/edit',[UserController::class,'edit'])->name('edit.data');
+Route::post('/user/update/{id}',[UserController::class,'update'])->name('update.user');
+Route::get('/admin/add',[UserController::class,'create'])->name('add.admin');
+//Route::post('/admin/customer/delete/{id}',[UserController::class,'destroy'])->name('delete.admin');
+Route::get('/hotel/services',[UserController::class,'servicesView'])->name('services');
