@@ -15,8 +15,8 @@
             <img src="{{asset('images/logoillustration/mainlogo.png')}}">
             <a href="{{route('home')}}">Home</a>
             <a href="#rooms">Rooms</a>
-            <a href="services.html">Services</a>
-            <a href="gallery.html">Gallery</a>
+            <a href="{{route('services')}}">Services</a>
+            <a href="{{route('gallery')}}">Gallery</a>
             <a href="">Book Now</a>
             @if(Auth::check() && Auth::user()->isAdmin==1)
                 <a href = "{{route('admin')}}">Administrator</a>
