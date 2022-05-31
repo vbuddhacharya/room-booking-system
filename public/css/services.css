@@ -1,0 +1,72 @@
+body{
+    background-color: #F5F5F5;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .banner{
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  
+  .banner .logo{
+    float: left;
+    position: absolute;
+    top: 0;
+    margin-left: 30px;
+  }
+  
+  .services{
+      margin-left: 237px;
+      margin-right: 237px;
+      padding-left: 20px;
+      padding-right: 20px;
+  }
+  
+  .services h1{
+      font-family: 'Merriweather', serif;
+      font-weight: 500;
+      text-align: center;
+      font-size: 45px;
+      margin: 70px auto;
+      
+    }
+  
+    .services .row{
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  
+    .restaurant, .swimming, .eventroom, .wifi, .meeting-hall, .parking, .doctor, .safe-deposit, .laundry, .security, .smoke, .concierge{
+      height: 200px;
+      width: 300px;
+      background-color: white;
+      padding: 50px;
+      float: left;
+      margin: 10px;
+      text-align: center;
+    }
+  
+    h5{
+      font-family: 'Merriweather', serif;
+      line-height: 1.3;
+      font-weight: 500;
+      font-size: 25px;
+      color: #8A191D;
+      margin: 0;
+      margin-bottom: 0.25rem;
+      padding-bottom: 0.5rem;
+    }
+  
+    p {
+      font-family: 'Martel Sans', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 2;
+      margin: 0;
+  }
+  
+  .img{
+    padding-bottom: 1rem;
+  }
