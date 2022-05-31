@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RoomController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,10 @@ Route::post('register-account',[UserController::class,'store'])->name('register'
 Route::get('/hotel/home',[UserController::class,'homeView'])->name('home');
 Route::get('/logout',[UserController::class,'logout'])->name('logout');
 Route::get('/admin-panel',[UserController::class,'adminView'])->name('admin');
+Route::get('/admin/room/edit',[RoomController::class,'edit'])->name('edit.room');
+Route::post('/admin/room/update/{id}',[RoomController::class,'update'])->name('update.room');
+Route::post('/admin/room/delete/{id}',[RoomController::class,'destroy'])->name('delete.room');
+Route::get('/admin/room/add',[RoomController::class,'create'])->name('add.room');
+Route::post('/admin/room/create',[RoomController::class,'store'])->name('create.room');
+Route::post('/admin/customer/view/{id}',[BookingController::class,'view'])->name('view.booking');
+Route::post('/admin/customer/delete/{id}',[UserController::class,'destroy'])->name('delete.cust');

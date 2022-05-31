@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Room;
 
 class UserController extends Controller
 {
@@ -42,6 +43,7 @@ class UserController extends Controller
         $newUser->email = $request->email;
         $newUser->password = bcrypt($request->password);
         $newUser->save();
+        return redirect()->route('home');
     }
 
     /**
@@ -87,6 +89,9 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('admin');
     }
     public function loginView(){
         return view('login');
@@ -112,6 +117,8 @@ class UserController extends Controller
         return view('index');
     }
     public function adminView(){
-        return view('admin');
+        $rooms = Room::all();
+        $users = User::all();
+        return view('admin',compact('rooms','users'));
     }
 }
