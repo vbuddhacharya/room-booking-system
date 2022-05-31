@@ -61,13 +61,34 @@
                                     @csrf    
                                     <button>View Bookings</button>
                                     </form></td>
-                                    <td><form action="{{route('delete.cust',['id'=>$user->id])}}" method="POST" onsubmit="return confirmDel()">
+                                    <td><form action="{{route('delete.user',['id'=>$user->id])}}" method="POST" onsubmit="return confirmDel()">
                                     @csrf
                                     <button >Delete</button>
                                     </form></td>
                                 </tr>
                             @endif
                         @endforeach
+                    </table>
+                </div>
+                <div class = "admin">
+                    <h2>Admininstrator Information</h2>
+                    <table>
+                        <tr><th>User ID</th><th>Name</th><th>Email</th><th>Actions</th>
+                        </tr>
+                        @foreach($users as $user)
+                            @if($user->isAdmin)
+                                <tr>
+                                    <td>{{$user->id}}</td>
+                                    <td>{{$user->name}}</td>
+                                    <td>{{$user->email}}</td>
+                                    <td><form action="{{route('delete.user',['id'=>$user->id])}}" method="POST" onsubmit="return confirmDel()">
+                                    @csrf
+                                    <button >Delete</button>
+                                    </form></td>
+                                </tr>
+                            @endif
+                        @endforeach
+                        <tr><td  colspan = "7"><form action="{{route('add.admin')}}">@csrf<button>Add Admin</button></form></td></tr>
                     </table>
                 </div>
             </div>

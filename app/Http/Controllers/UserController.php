@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Room;
+use Illuminate\Foundation\Auth\User as AuthUser;
 
 class UserController extends Controller
 {
@@ -27,6 +28,7 @@ class UserController extends Controller
     public function create()
     {
         //
+        return view('add_admin');
     }
 
     /**
@@ -42,6 +44,9 @@ class UserController extends Controller
         $newUser->name = $request->name;
         $newUser->email = $request->email;
         $newUser->password = bcrypt($request->password);
+        if (isset($request->isAdmin)){
+            $newUser->isAdmin = $request->isAdmin;
+        }
         $newUser->save();
         return redirect()->route('home');
     }
@@ -63,9 +68,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        return view('edit_user',compact('user'));
     }
 
     /**
@@ -78,6 +85,17 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $validated = $request->validate([
+            'name'=> 'required|string',
+            'email'=>'required|email:filter',
+            'password'=>'required|between:6,10',
+        ]);
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->save();
+        return redirect()->route('home');
     }
 
     /**
@@ -120,5 +138,8 @@ class UserController extends Controller
         $rooms = Room::all();
         $users = User::all();
         return view('admin',compact('rooms','users'));
+    }
+    public function servicesView(){
+        return view('services');
     }
 }

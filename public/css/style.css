@@ -31,8 +31,8 @@ body {
   }
   .username{
     float: left;
-    display: block;
-    padding: 14px;
+    /*display: block;
+    /*padding: 14px;*/
     text-align: center;
   }
   

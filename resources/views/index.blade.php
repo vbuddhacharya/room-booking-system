@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>index</title>
+        <title>XYZ Hotel</title>
         <link rel="stylesheet" href="{{asset('css/style.css')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
@@ -22,9 +22,11 @@
                 <a href = "{{route('admin')}}">Administrator</a>
             @endif
             @if (Auth::check())
+            
                 <div class = "nav-login">
-                    <span class = "username"><i class="fa fa-fw fa-user"></i>{{Auth::user()->name}}</span>
-                    <a href="{{route('logout')}}">Logout</a>
+                
+                    <span class = "username"><a href="{{route('edit.data')}}"><i class="fa fa-fw fa-user" style="float:left;" ></i>{{Auth::user()->name}}
+                    <a href="{{route('logout')}}">Logout</a></span>
                 </div>
             @else
             <div class="nav-login">
@@ -113,9 +115,11 @@
                     </div>
                 </div>
                 <div class="btndiv">
-                    <button class="btn2" type="submit" name="button">
-                        <font color="white">See More</font>
-                    </button>
+                    <form action="{{route('services')}}">
+                        <button class="btn2" name="button">
+                           <font color="white">See More</font>
+                        </button>
+                    </form>
                 </div>
             </div>
 
