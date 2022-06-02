@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use PhpParser\Node\Expr\Cast\Bool_;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +39,7 @@ Route::get('/admin/add',[UserController::class,'create'])->name('add.admin');
 //Route::post('/admin/customer/delete/{id}',[UserController::class,'destroy'])->name('delete.admin');
 Route::get('/hotel/services',[UserController::class,'servicesView'])->name('services');
 Route::get('/hotel/gallery',[UserController::class,'galleryView'])->name('gallery');
+Route::get('/hotel/booking/date',[BookingController::class,'dateView'])->name('date');
+Route::post('/hotel/booking/rooms',[BookingController::class,'roomView'])->name('choose.rooms');
+Route::post('/hotel/booking/store',[BookingController::class,'store'])->name('store.booking');
+Route::post('/hotel/booking/confirm',[BookingController::class,'confirmView'])->name('confirm');

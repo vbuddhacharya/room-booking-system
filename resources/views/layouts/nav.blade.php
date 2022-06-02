@@ -17,7 +17,7 @@
             <a href="#rooms">Rooms</a>
             <a href="{{route('services')}}">Services</a>
             <a href="{{route('gallery')}}">Gallery</a>
-            <a href="">Book Now</a>
+            <a href="{{route('date')}}">Book Now</a>
             @if(Auth::check() && Auth::user()->isAdmin==1)
                 <a href = "{{route('admin')}}">Administrator</a>
             @endif

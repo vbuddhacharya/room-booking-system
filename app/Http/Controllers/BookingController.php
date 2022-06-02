@@ -81,4 +81,21 @@ class BookingController extends Controller
     {
         //
     }
+    public function dateView(){
+        return view('date');
+    }
+    public function roomView(Request $request){
+        $guests = $request->guests;
+        $rooms = $request->rooms;
+        $values = ($request->except('_token'));
+        if (($rooms*4)<$guests){
+            $error = "Maximum 4 guests per room";
+            // return view('date',compact('error','values'));
+            // return redirect()->route('date',['id'=>1])-->withInput();
+            return back()->withInput()->withErrors(['Maximum 4 guests per room']);
+        }
+        else{
+            return view('choose_rooms',compact('values'));
+        }
+    }
 }
