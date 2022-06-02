@@ -9,6 +9,7 @@
     <title>Edit User Information</title>
    </head>
 <body>
+@include('layouts.nav')
 @if ($errors->any())
         <div class="alert alert-danger">
             <ul>

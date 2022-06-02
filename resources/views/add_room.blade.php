@@ -7,6 +7,7 @@
     <title>Add Rooms</title>
 </head>
 <body>
+@include('layouts.nav')
     <h1>Add Room</h1>
     @if ($errors->any())
         <div class="alert alert-danger">

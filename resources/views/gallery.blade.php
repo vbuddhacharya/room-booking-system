@@ -8,6 +8,7 @@
     <title>Gallery</title>
 </head>
 <body>
+@include('layouts.nav')
     <div class="banner">
         <img src="{{asset('images/servicesphotos/servicebg.jpg')}}" width="1864px">
         <div class="logo">
