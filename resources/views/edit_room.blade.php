@@ -17,9 +17,9 @@
             </ul>
         </div>
     @endif
-    <form action="{{route('update.room',['id'=>$room->roomNo])}}" method="post">
+    <form action="{{route('update.room',['id'=>$room->id])}}" method="post">
         @csrf
-        Room Number: <input type="number" name="roomNo" id="" value = "{{$room->roomNo}}"><br>
+        Room Number: <input type="number" name="id" id="" value = "{{$room->id}}"><br>
         Room Location: <select name="location" id="">
             @foreach($locs as $loc)
             <option value="{{$loc}}" @if($room->location==$loc) selected @endif>{{$loc}}</option>
@@ -30,6 +30,10 @@
             @foreach($types as $type)
             <option value="{{$type}}" @if($room->type==$type) selected @endif>{{$type}}</option>
             @endforeach
+        </select><br>
+        Room Size: <select name="size" id="">
+            <option value="Single" @if($room->size=="Single") selected @endif>Single</option>
+            <option value="Double" @if($room->size=="Double") selected @endif>Double</option>
         </select><br>
         Rate: <input type="number" name="rate" value = "{{$room->rate}}" id=""><br>
         <button type="submit">Confirm</button>

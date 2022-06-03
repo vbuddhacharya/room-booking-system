@@ -38,16 +38,19 @@ class RoomController extends Controller
     {
         //
         $validated = $request->validate([
-            'roomNo' => 'required|integer|unique:rooms,roomNo|between:101,599',
+            'id' => 'required|integer|unique:rooms,id|between:101,599',
             'location' => 'required',
             'rate' => 'required|numeric',
             'type' => 'required',
+            'size' => 'required',
         ]);
         $newRoom = new Room();
-        $newRoom->roomNo = $request->roomNo;
+        $newRoom->id = $request->id;
         $newRoom->location = $request->location;
         $newRoom->type = $request->type;
         $newRoom->rate = $request->rate;
+        $newRoom->size = $request->size;
+        $newRoom->booked = $request->booked;
         if ($newRoom->save())
             return redirect()->route('admin');
         else
@@ -93,16 +96,19 @@ class RoomController extends Controller
     {
         //
         $validated = $request->validate([
-            'roomNo' => 'required|integer|unique:rooms,roomNo|between:101,599',
+            'id' => 'required|integer|unique:rooms,id|between:101,599',
             'location' => 'required',
             'rate' => 'required|numeric',
             'type' => 'required',
+            'size' => 'required',
         ]);
         $room = Room::find($id);
-        $room->roomNo = $request->roomNo;
+        $room->id = $request->id;
         $room->location = $request->location;
         $room->type = $request->type;
         $room->rate = $request->rate;
+        $room->size = $request->size;
+        $room->booked = $request->booked;
         $room->save();
         return redirect()->route('admin');
     }
