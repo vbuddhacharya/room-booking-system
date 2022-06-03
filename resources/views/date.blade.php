@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery UI Datepicker - Select a Date Range</title>
+  <title>Booking</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -47,7 +47,7 @@
 <body>
     @include('layouts.nav');
     <div class = "content">
-        <form action="{{route('choose.rooms')}}" method="post">
+        <form action="{{route('choose.rooms')}}" method="get">
           @csrf
             <div class = "date">
                 <label for="from">From</label>
@@ -59,7 +59,7 @@
                 <label for="rooms">No. of Rooms</label>
                 <select name="rooms" id="">
                     @for($i=1;$i<=10;$i++)
-                        <option value = "{{$i}}">{{$i}}</option>
+                        <option value = "{{$i}}" @selected(old('rooms')==$i)>{{$i}}</option>
                     @endfor
                 </select><br>
                 <label for="guests">No. of Guests(Max 4 in each room)</label>

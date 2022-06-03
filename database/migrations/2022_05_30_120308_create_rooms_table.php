@@ -14,11 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('rooms', function (Blueprint $table) {
-            $table->unsignedBigInteger('roomNo');
+            $table->id();
             $table->string('location');
             $table->unsignedBigInteger('rate');
             $table->string('type');
             $table->string('size');
+            $table->boolean('booked');
             $table->timestamps();
         });
     }
