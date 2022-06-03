@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booked_room;
-use App\Models\Booking_detail;
+use App\Models\Booking;
 use App\Models\Room;
 use App\Models\User;
 use Illuminate\Http\Request;
 use DateTime;
+use Illuminate\Support\Facades\DB;
 
 class BookingController extends Controller
 {
@@ -46,7 +47,7 @@ class BookingController extends Controller
             
             case 'confirm':
                 //dd($request);
-                $booking = new Booking_detail();
+                $booking = new Booking();
                 $booking->from_date = date('Y-m-d',strtotime($request->from));
                 $booking->to_date = date('Y-m-d',strtotime($request->to));
                 $booking->user_id = $request->user;
@@ -63,6 +64,11 @@ class BookingController extends Controller
                 $booking->days = $days;
                // $booking->total = $request->total;
                 $booking->save();
+                foreach($request->roomNo as $rm){
+                    $r = Room::find($rm);
+                    $r->booked = 0;
+                    $r->save();
+                }
                 return $this->createRelation($request,$booking->id);
                 break;
             case 'discard':
@@ -80,7 +86,7 @@ class BookingController extends Controller
         foreach($request->roomNo as $rm){
             $relation = new Booked_room();
             $relation->booking_id = $booking_id;
-            $relation->roomNo = $rm;
+            $relation->room_id = $rm;
             $relation->save();
         }
     }
@@ -128,9 +134,13 @@ class BookingController extends Controller
     public function destroy($id)
     {
         //
+        $book = Booking::find($id);
+        $book->delete();
+        return redirect()->route('admin');
     }
     public function dateView(){
-        return view('date');
+        $num = Room::all()->count();
+        return view('date',compact('num'));
     }
     public function roomView(Request $request){
         $guests = $request->guests;
@@ -147,119 +157,109 @@ class BookingController extends Controller
 
     public function verifyRooms(Request $request){
         //dd($request);
-        $values = ($request->except('_token'));
-        $fdate = $request->from;
-        $tdate = $request->to;
-        $datetime1 = new DateTime($fdate);
-        $datetime2 = new DateTime($tdate);
-        $interval = $datetime1->diff($datetime2);
-        $days = $interval->format('%a');
-        $flag=1;
-        $total = 0;
-        for($i=0;$i<$request->rooms;$i++){
-            $condition = ['location'=>$request->location[$i],'type'=>$request->type[$i],'size'=>$request->size[$i],'booked'=>0];
-            $allRooms = Room::where($condition)->get();
-            $check = DB::table('rooms')
-                    ->join('booked_rooms','booked_rooms.roomNo','=','rooms.id')
-                    ->join()
-            $count = $allRooms->count();
-
-            if ($count<1){
-                $flag = 0;
-                break;
-            }
-            else{
-                $r = $allRooms->first();
-                $roomNumbers[] = $r->id;
-                $r->booked = 1;
-                $rate[] = $r->rate;
-                $ra = $r->rate;
-                $r->save();
-            }
-            $total = $total + $ra * $days;
-        }
-       if (isset($roomNumbers)){
-            if ($flag ==1){
-                //dd($values,$roomNumbers,$total,$rate);
-                return view('confirm',compact('values','roomNumbers','total','rate','days'));
-            }
-            else{
-                foreach($roomNumbers as $rm){
-                    $r = Room::find($rm);
-                    $r->booked = 0;
-                    $r->save();
+        switch ($request->action){
+            case 'confirm':
+                $values = ($request->except('_token'));
+                $fdate = $request->from;
+                $tdate = $request->to;
+                $datetime1 = new DateTime($fdate);
+                $datetime2 = new DateTime($tdate);
+                $interval = $datetime1->diff($datetime2);
+                $days = $interval->format('%a');
+                $flag=1;
+                $total = 0;
+                
+                $arrive = date('Y-m-d',strtotime($fdate));
+                $depart = date('Y-m-d',strtotime($tdate));
+                for($i=0;$i<$request->rooms;$i++){
+                    $ra=0;
+                    $condition = ['location'=>$request->location[$i],'type'=>$request->type[$i],'size'=>$request->size[$i],'booked'=>0];
+                    $allRooms = Room::where($condition)->get();
+                    $count = count($allRooms);
+                    if ($count<1){
+                        $flag = 0;
+                        break;
+                    }
+                    else{
+                        $flagRoom=0;
+                        foreach($allRooms as $room){
+                            //dd($allRooms);
+                            $check = Booked_room::where('room_id','=','$room->id')->get();
+                            //dd($check);
+                            if (!($check)){
+                                $flagRoom = 1;
+                            }
+                            else{
+                            // dd($check);
+                                $flagBooked=0;
+                                foreach($check as $c){
+                                    dd($c);
+                                    $book = Booking::where('id','$c->booking_id')
+                                            ->where(function($query) use ($arrive, $depart){
+                                                $query->where(function($query) use ($arrive, $depart){
+                                                    $query->where('from_date','<=',$arrive)
+                                                    ->where('to_date','>=',$arrive);
+                                                })
+                                                ->orWhere(function($query) use ($arrive, $depart){
+                                                    $query->where('from_date','<=',$depart)
+                                                    ->where('to_date','>=',$depart);
+                                                });
+                                            })->exists();
+                                    if($book){
+                                        $flagBooked = 1;
+                                        break;
+                                    }
+                                }
+                                if ($flagBooked==0){
+                                    $flagRoom=1; 
+                                }    
+                            }
+                            if($flagRoom == 1){
+                                $roomNumbers[] = $room->id;
+                                $room->booked = 1;
+                                $rate[] = $room->rate;
+                                $ra = $room->rate;
+                                $room->save();                           
+                                break;
+                            }
+                        }
+                        if ($flagRoom==0){
+                            $flag=0;
+                        }
+                        else{
+                            $total = $total + $ra * $days;
+                        }
+                    }
+                }
+                if (isset($roomNumbers)){
+                        if ($flag ==1){
+                            return view('confirm',compact('values','roomNumbers','total','rate','days'));
+                        }
+                        else{
+                            foreach($roomNumbers as $rm){
+                                $r = Room::find($rm);
+                                $r->booked = 0;
+                                $r->save();
+                            }
+                        }
                 }
                 return back()->withInput()->withErrors(['Requested rooms unavailable. Please change some requirements and try again..']);
-            }
-       }
-       return false;
-        
-    }
-
-
-    public function check(Request $request){
-        $flag=1;
-        
-        for($i=0;$i<$request->rooms;$i++){
-            $condition = ['location'=>$request->location[$i],'type'=>$request->type[$i],'size'=>$request->size[$i],'booked'=>0];
-            $allRooms = Room::where($condition)->get();
-            $count = $allRooms->count();
-            if ($count<1){
-                $flag = 0;
+            break;
+            case 'discard':
+                return redirect()->route('date')->withInput();
                 break;
-            }
-            else{
-                $r = $allRooms->first();
-                $roomNumbers[] = $r->roomNo;
-                $r->booked = 1;
-                $r->save();
-            }
         }
-       if (isset($roomNumbers)){
-            if ($flag ==1){
-                return $roomNumbers;
-            }
-            else{
-                foreach($roomNumbers as $rm){
-                    $r = Room::find($rm);
-                    $r->booked = 0;
-                    $r->save();
-                }
-                return false;
-            }
-       }
-       return false;
-        
-
-//        if(($numbers = $this->check($request))!=false){
-//         dd($values,$numbers);
-//         return view('confirm',compact('values','numbers'));
-// }
-// else{
-//     return back()->withInput()->withErrors(['Requested rooms unavailable. Please change some requirements and try again..']);
-// }
     }
+
+    public function viewRooms(Request $request){
+        $book = Booking::find($request->id);
+        return view('view_rooms',compact('book'));
+    }
+    public function viewBookings(Request $request){
+        $user = User::find($request->id);
+        $count = count($user->bookings);
+        return view('user_bookings',compact('user','count'));
+    }
+
 }
 
-// $i = $request->rooms;
-//         for ($j=0;$j<$i;$j++){
-//             $booked = new Booked_room();
-//             $condition = ['location'=>$request->location[$j],'type'=>$request->type[$j],'size'=>$request->size[$j],'booked'=>0];
-//             $allRooms = Room::where($condition)->get();
-//             $room = $allRooms->first();
-//             if(isset($room)){
-//                 $booked->booking_id = $booking_id;
-//                 $booked->room_no = $room->roomNo;
-//                 $booked->save();
-//                 $room->booked = 1;
-//                 $room->save();
-//             }
-//             else{
-//                 $b = Booking_detail::find($booking_id);
-//                 $b->delete();
-//                 // $book = Booking_detail::;
-//                 return back()->withInput()->withErrors(['Requested rooms unavailable. Please change some requirements and try again..']);
-//             }
-            
-//         }
-//         return redirect()->route('confirm');

@@ -43,5 +43,9 @@ Route::get('/hotel/booking/date',[BookingController::class,'dateView'])->name('d
 Route::get('/hotel/booking/rooms',[BookingController::class,'roomView'])->name('choose.rooms');
 Route::post('/hotel/booking/check',[BookingController::class,'verifyRooms'])->name('confirm.rooms');
 Route::post('/hotel/booking/store',[BookingController::class,'store'])->name('store.booking');
+Route::post('/hotel/booking/delete',[BookingController::class,'destroy'])->name('delete.booking');
 Route::get('/hotel/booking/confirm',[BookingController::class,'confirmView'])->name('confirm');
-Route::get('/hotel/room/bookings/',[BookingController::class,'roomBookings'])->name('room.bookings');
+Route::get('/hotel/room/bookings/',[RoomController::class,'roomBookings'])->name('room.bookings');
+Route::get('/hotel/bookings/rooms/view',[BookingController::class,'viewRooms'])->name('view.rooms');
+Route::get('/hotel/bookings/users/view/',[BookingController::class,'viewBookings'])->name('view.booking');
+

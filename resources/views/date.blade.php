@@ -58,7 +58,7 @@
             <div class ="rooms-choose">
                 <label for="rooms">No. of Rooms</label>
                 <select name="rooms" id="">
-                    @for($i=1;$i<=10;$i++)
+                    @for($i=1;$i<=$num;$i++)
                         <option value = "{{$i}}" @selected(old('rooms')==$i)>{{$i}}</option>
                     @endfor
                 </select><br>
