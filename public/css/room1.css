@@ -1,0 +1,198 @@
+#image{
+    margin: -50px;
+    padding: 0;
+    border:0;
+}
+#title{
+    text-align: center;
+    color: #8A191D;
+    margin-top: 80px;
+
+}
+.details{
+    text-align: center;
+    font-size: 130%;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+form{
+  position: relative;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+
+}
+.tab{
+    border-spacing: 0 30px;
+}
+.contain, .info{
+    margin-left: 30vh;
+
+}
+.container{
+    margin-left: 30vh;
+    font-size:130%;
+    line-height: 30px;
+    margin-right:40px;
+    text-align: justify;
+}
+#tabsp{
+    border-spacing: 0px;
+    width: 50%;
+    text-align: center;
+    color: #595959;
+}
+#booknow{
+    text-align: center;
+    background-color: #8A191D;
+    color: antiquewhite;
+}
+#imag{
+    margin-right: 80px;
+}
+#dates {
+    color: #8A191D;
+    font-size: 30px;
+    background-color: beige;
+    padding: 5px;
+}
+.review{
+    color: #8A191D;
+    font-size: 30px;
+    background-color: beige;
+    padding: 5px;
+    margin-left: 30vh;
+    margin-right: 20vh;
+    height: 650px;
+}
+#phone{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.content{
+    font-size: 30px;
+}
+.button{
+    color: #fff;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+.button input{
+    color: #fff;
+    background: #8A191D;
+    border-radius: 6px;
+    padding: 10px 25px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    font-size: 20px;
+}
+.button input:hover{
+    color: #eef137;
+  }
+.input-box{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 92%;
+    margin: 10px 0;
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+.input-box input{
+    height: 100%;
+    width: 92%;
+    outline: none;
+    border: none;
+    padding: 0 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+  }
+  
+.review-item{
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    width: 60%;
+    position: relative;
+    margin-left:27vh;
+}
+.review-item input{
+    height: 40px;
+    width: 70%;
+    outline: none;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 500;
+    border: 1px solid rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    margin-bottom: 0%;
+
+}
+.review-item textarea{
+    margin-top:25vh;
+    outline: none;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 500;
+    border: 1px solid rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+.message{
+    margin-top:55vh;
+    color: #fff;
+    margin-bottom: 20px;
+    width: 50%;
+}
+.message input{
+    color: #fff;
+    background: #8A191D;
+    border-radius: 6px;
+    padding: 10px 25px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    font-size: 20px;
+}
+
+i{
+    margin-top:5vh;
+    margin-bottom:1vh;
+}
+.heading{
+    font-size: 6vh;
+    line-height: 14vh;
+    color: #8A191D;
+    border-spacing: 0px 30px;
+    margin-left: 15vh;
+    padding-left: 8vh;
+    padding-top: 2vh;
+}
+.feature{
+    font-size: 3vh;
+    line-height: 5vh;
+    margin-left: 10px;
+   
+}
+.info{
+    margin-right: 20vh;
+    background-color: #E8E8E6;
+    height: 60vh;
+
+}
+.amenities{
+    font-size: 3vh;
+    line-height: 5vh;
+    
+}
+li{
+    margin-left: 6vh;
+}
