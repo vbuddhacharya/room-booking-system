@@ -20,7 +20,7 @@
     @endif
     <form action="{{route('create.room')}}" method = "post">
         @csrf
-        Room Number: <input type="number" name="roomNo" id=""><br>
+        Room Number: <input type="number" name="id" id=""><br>
         Room Location: <select name="location" id="">
             <option value="" selected="selected">Select</option>
             <option value="First Floor">First Floor</option>
@@ -35,7 +35,12 @@
             <option value="Deluxe">Deluxe</option>
             <option value="Suite">Suite</option>
         </select><br>
+        Room Size: <select name="size" id="">
+            <option value="Single">Single</option>
+            <option value="Double">Double</option>
+        </select>
         Rate: <input type="number" name="rate" id=""><br>
+        <input type="hidden" name="booked" value = '0'>
         <button type="submit">Confirm</button>
         <button type="reset">Reset</button>
     </form>

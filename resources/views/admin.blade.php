@@ -24,21 +24,27 @@
                     <h2>Room Information</h2>
                     <div class = "">
                         <table id = "info" height = "100px">
-                            <tr"><th>Room Number</th><th>Location</th><th>Rate</th><th>Type</th><th>Booked</th><th colspan="2">Actions</th>
+                            <tr"><th>Room Number</th><th>Location</th><th>Rate</th><th>Type</th><th>Size</th><th>Booked</th><th colspan="3">Actions</th>
                             </tr>
                             @foreach($rooms as $room)
                                     <tr>
-                                        <td>{{$room->roomNo}}</td>
+                                        <td>{{$room->id}}</td>
                                         <td>{{$room->location}}</td>
                                         <td>{{$room->rate}}</td>
                                         <td>{{$room->type}}</td>
-                                        <td>{{$room->booked}}</td>
+                                        <td>{{$room->size}}</td>
+                                        <td>@if($room->booked==1) Yes @else No @endif</td>
+                                        <td><form action = "{{route('room.bookings')}}" method="get">
+                                        @csrf
+                                        <input type="hidden" name="id" value = "{{$room->id}}">
+                                        <button>View Bookings</button>
+                                        </form></td>
                                         <td><form action = "{{route('edit.room')}}" method="get">
                                         @csrf
-                                        <input type="hidden" name="id" value = "{{$room->roomNo}}">
+                                        <input type="hidden" name="id" value = "{{$room->id}}">
                                         <button>Edit</button>
                                         </form></td>
-                                        <td><form action="{{route('delete.room',['id'=>$room->roomNo])}}" method="POST"  onsubmit="return confirmDel()">
+                                        <td><form action="{{route('delete.room',['id'=>$room->id])}}" method="POST"  onsubmit="return confirmDel()">
                                         @csrf
                                         <button>Delete</button>
                                         </form></td>
