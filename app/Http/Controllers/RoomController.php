@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Room;
 use App\Models\User;
+use App\Models\Booking;
 use Illuminate\Http\Request;
 
 class RoomController extends Controller
@@ -126,4 +127,9 @@ class RoomController extends Controller
         $room->delete();
         return redirect()->route('admin');
     }
+    public function roomBookings(Request $request){
+        $rooms = Room::find($request->id);
+        return view('room_bookings',compact('rooms'));
+    }
+    
 }

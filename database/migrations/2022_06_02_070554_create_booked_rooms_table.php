@@ -15,11 +15,9 @@ return new class extends Migration
     {
         Schema::create('booked_rooms', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('booking_id');
-            $table->unsignedBigInteger('roomNo');
-            $table->foreign('booking_id')->references('id')->on('booking_details');
-           
-            $table->foreign('roomNo')->references('id')->on('rooms');
+            //$table->unsignedBigInteger('booking_id');
+            $table->foreignId('booking_id')->constrained()->onDelete('cascade');
+            $table->foreignId('room_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

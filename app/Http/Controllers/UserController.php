@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -137,7 +138,8 @@ class UserController extends Controller
     public function adminView(){
         $rooms = Room::all();
         $users = User::all();
-        return view('admin',compact('rooms','users'));
+        $bookings = Booking::all();
+        return view('admin',compact('rooms','users','bookings'));
     }
     public function servicesView(){
         return view('services');

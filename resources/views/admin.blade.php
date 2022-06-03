@@ -24,7 +24,7 @@
                     <h2>Room Information</h2>
                     <div class = "">
                         <table id = "info" height = "100px">
-                            <tr"><th>Room Number</th><th>Location</th><th>Rate</th><th>Type</th><th>Size</th><th>Booked</th><th colspan="3">Actions</th>
+                            <tr"><th>Room Number</th><th>Location</th><th>Rate</th><th>Type</th><th>Size</th><th colspan="3">Actions</th>
                             </tr>
                             @foreach($rooms as $room)
                                     <tr>
@@ -33,7 +33,6 @@
                                         <td>{{$room->rate}}</td>
                                         <td>{{$room->type}}</td>
                                         <td>{{$room->size}}</td>
-                                        <td>@if($room->booked==1) Yes @else No @endif</td>
                                         <td><form action = "{{route('room.bookings')}}" method="get">
                                         @csrf
                                         <input type="hidden" name="id" value = "{{$room->id}}">
@@ -65,8 +64,9 @@
                                     <td>{{$user->id}}</td>
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->email}}</td>
-                                    <td><form action="{{route('view.booking',['id'=>$user->id])}}">
+                                    <td><form action="{{route('view.booking')}}" method="get">
                                     @csrf    
+                                    <input type="hidden" name="id" value = "{{$user->id}}">
                                     <button>View Bookings</button>
                                     </form></td>
                                     <td><form action="{{route('delete.user',['id'=>$user->id])}}" method="POST" onsubmit="return confirmDel()">
@@ -98,6 +98,36 @@
                             @endif
                         @endforeach
                         <tr><td  colspan = "7"><form action="{{route('add.admin')}}">@csrf<button>Add Admin</button></form></td></tr>
+                    </table>
+                </div>
+                <div class = "bookings">
+                    
+                    <h2>Booking Information</h2>
+                    <table id="info" width=10px>
+                        <tr><th>Booking ID</th><th>Name</th><th>Email</th><th>Contact</th><th>No. of Rooms</th><th>No. of Guests</th><th>Arrival</th><th>Departure</th><th>Days</th><th>Actions</th>
+                        </tr>
+                        @foreach($bookings as $book)
+                                <tr>
+                                    <td>{{$book->id}}</td>
+                                    <td>{{$book->user->name}}</td>
+                                    <td>{{$book->user->email}}</td>
+                                    <td>{{$book->contact}}</td>
+                                    <td>{{$book->no_of_rooms}}</td>
+                                    <td>{{$book->no_of_people}}</td>
+                                    <td>{{$book->from_date}}</td>
+                                    <td>{{$book->to_date}}</td>
+                                    <td>{{$book->days}}</td>
+                                    <td><form action="{{route('view.rooms')}}" method="get">
+                                    @csrf
+                                    <input type="hidden" name="id" value = "{{$book->id}}">
+                                    <button >View Rooms</button>
+                                    </form></td>
+                                    <td><form action="{{route('delete.booking',['id'=>$book->id])}}" method="POST" onsubmit="return confirmDel()">
+                                    @csrf
+                                    <button >Delete</button>
+                                    </form></td>
+                                </tr>
+                        @endforeach
                     </table>
                 </div>
             </div>
