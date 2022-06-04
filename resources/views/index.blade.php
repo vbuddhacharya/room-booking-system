@@ -41,6 +41,7 @@
             <div class="rooms">
                 <div class="rooms-title">
                     <h1><font color="#8A191D">Our Rooms</font></h1>
+                    <p class="subtext">DISCOVERING A NEW DIMENSION OF LUXURY</p>
                 </div>
                 <div class="room-details">
                     <div class="room1">
@@ -69,6 +70,7 @@
     
             <div class="services">
                 <h1><font color="#8A191D">Our Services</font></h1>
+                <p class="subtext">EXPERIENCE GRACIOUS AND QUALITY HOSPITALITY FROM OUR FRIENDLY STAFF</p>
                 <div class="row">
                     <div class="restaurant">
                         <div class="img">
@@ -99,6 +101,7 @@
 
             <div class="contact-us">
                 <h1><font color="#8A191D">Contact Us</font></h1>
+                <p class="subtext">SEND YOUR MESSAGE</p>
                 <div class="row">
                     <div class="col-1">
                         <div class="gmap">
