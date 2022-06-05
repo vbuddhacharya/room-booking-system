@@ -1,5 +1,4 @@
 body{
-     background-image: url("/images/rooms/room.jpg");
      opacity: 1;
    
      /* Full height */
@@ -20,9 +19,9 @@ h1{
     background-color: #f2f2f2;
     border-radius: 25px;
     opacity: 0.89;
-    width: 40%;
-    height: 80vh;
-    margin-left: 55vh;
+    width: 25%;
+    height: 540px;
+    margin-left: 70vh;
     margin-right: 50vh;
     margin-top: 15vh;
     display: flex;
@@ -38,7 +37,6 @@ position: relative;
 }
 form{
     line-height: 2rem;
-    padding-left: 4vh;
 }
 .inputstl { 
     padding: 8px; 
@@ -59,13 +57,13 @@ button{
     vertical-align: middle;
     font-weight: 500;
     font-family: 'Merriweather', serif;
-    color: #FFFFFF;
+    color: black;
     border: 1px solid transparent;
     background-color:rgb(194, 187, 187);
-    padding: .375rem 0.75rem;
+    padding: 5px 30px 5px 30px;
     font-size: 1rem;
     line-height: 1;
-    border-radius: 15px 15px;
+    border-radius: 10px;
     transition: color .15s 
 }
 button:hover{
@@ -73,7 +71,7 @@ button:hover{
     background-color: #8A191D;
 }
 #btn1{
-    margin-right: 10px;
+    margin-right: 70px;
 }
 #btn2{
     margin-left: 10px;

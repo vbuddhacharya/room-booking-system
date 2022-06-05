@@ -38,7 +38,7 @@ body{
     padding-right: 32px;
   }
 
-  .restaurant, .swimming, .eventroom, .wifi, .meeting-hall, .parking, .doctor, .safe-deposit, .laundry, .security, .smoke, .concierge{
+.services .row .restaurant, .services .row .swimming,.services .row .eventroom,.services .row .wifi,.services .row .meeting-hall,.services .row .parking,.services .row .doctor,.services .row .safe-deposit,.services .row .laundry,.services .row .security,.services .row .smoke,.services .row .concierge{
     height: 200px;
     width: 300px;
     background-color: white;
