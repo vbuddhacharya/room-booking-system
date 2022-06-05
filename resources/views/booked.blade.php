@@ -16,10 +16,14 @@
         @csrf
         <div class="form-container">
             <div class="book">
-            <p id = "change">Booking ID</p>
+                <div class="book-in">
+            <p class = "change">Booking ID</p>
             <input type="text" name="booking" id="book-1" value = "{{$book->id}}" readonly>
-            <p id = "change">Name</p>
+                </div>
+                <div class="book-in2">
+            <p class = "change">Name</p>
             <input type="text" name="name" id="book-2" value = "{{$book->user->name}}" readonly>
+                </div>
             </div>
             <div class = "date">
                 <label for="from">Arrival</label>
@@ -29,24 +33,24 @@
             </div>
             <div class = "rooms-choose">
                 <div class="con">
-                    <p id = "change">Contact</p>
+                    <p class = "change">Contact</p>
                     <input type="text" name="contact" id="" value = "{{$book->contact}}" readonly>
                 </div>
                 <div class="room-choice">
-                    <p id = "change">No. of Guests</p>
+                    <p class = "change">No. of Guests</p>
                     <input type="text" name="guests" id="" value = "{{$book->no_of_people}}" readonly>
                 </div>
 
                 <div class="room-choice">
-                    <p id = "change">No. of Rooms</p>
+                    <p class = "change">No. of Rooms</p>
                     <input type="text" name="rooms" id="" value = "{{$book->no_of_rooms}}" readonly>
                 </div>
                 <div class="room-choice total">
-                    <p id = "change">Total</p>
-                    <input type="text" name="total" id="" value = "total halna baaki" readonly>
+                    <p class = "change">Total</p>
+                    <input type="text" name="total" id="" value = "{{$book->total}}" readonly>
                 </div>
             </div>
-            <p id ="info-1">If you have any concerns, please contact the hotel.
+            <p class ="info-1">If you have any concerns, please contact the hotel.
                 Thank you for trusting us to make your stay comfortable.
             </p> 
             <div class = "buttons">

@@ -21,10 +21,10 @@
         </div>
         <div class="info-in biginp">
             <p class="lab fontclass">Contact:</p>
-            <input type="text" name="contact" id="" value = "{{$book->contact}}" readonly>
+            <input type="text" name="contact" id="inpu" value = "{{$book->contact}}" readonly>
         </div>
     </div>
-    <table class="table table-hover table-sm">
+    <table class="table table-hover table-sm" id="res">
         <thead class=" thead-dark">
           <tr>
             <th scope="col">#</th>

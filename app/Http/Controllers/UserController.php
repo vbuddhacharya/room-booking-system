@@ -49,7 +49,7 @@ class UserController extends Controller
             $newUser->isAdmin = $request->isAdmin;
         }
         $newUser->save();
-        return redirect()->route('home');
+        return redirect()->route('login');
     }
 
     /**
@@ -110,7 +110,7 @@ class UserController extends Controller
         //
         $user = User::find($id);
         $user->delete();
-        return redirect()->route('admin');
+        return redirect()->route('admin.panel');
     }
     public function loginView(){
         return view('login');

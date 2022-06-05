@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins" , sans-serif;
+    
 }
 body{
     min-height: 100vh;
@@ -91,6 +92,7 @@ button {
     letter-spacing: .09em;
     border-radius: 10px;
     /* font-weight: 500px; */
+    cursor: pointer;
   }
   button input:hover{
     background: #8A191D;
@@ -212,10 +214,11 @@ hr{
   } */
 .title{
     position: relative;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 500;
     color: #333;
     text-align: center;
+    font-family: 'Merriweather', serif;
   }
 .con{
     gap: 13%;
@@ -237,7 +240,7 @@ padding-bottom: 3%;
 #info{
     margin-top: 2%;
 }
-#info-1{
+.info-1{
     margin-top: 5%;
 }
 .room-num{
@@ -253,7 +256,7 @@ margin-bottom: 2%;
 .room-choice input[type=text]{
     border-bottom: none;
 }
-.total #change{
+.total .change{
     width: 56%
 }
 
@@ -261,22 +264,36 @@ margin-bottom: 2%;
 .book{
     display:flex;
     align-items: center;
-    flex-flow:row wrap;
+    flex-flow:column wrap;
+    gap: 7%;
+    margin-bottom: -7%;
 }
 .book .change{
-    width: 19%;
+    width: 33%;
     margin-left: 2%;
     margin-right: 3%;
 }
-.book .book-1{
+.book #book-1{
     width:13%;
 }
-.book .book-2{
+.book #book-2{
     padding-left: 4%;
-width: 30%;
+    width: 52%;
 margin-left: -6%;
 }
+.book-in{
 
+    display:flex;
+    flex-flow:row;
+    align-items: center;
+margin-left: 0%;
+}
+.book-in2{
+    display:flex;
+    flex-flow:row;
+    align-items: center;
+    margin-left: -12%;
+}
   @media (max-width: 730px){
     .rooms-choose{
         flex-flow: row wrap;
@@ -331,4 +348,10 @@ padding-left: 6%;
     #info{
         margin-top: 1%;
     }
+.book{
+    flex-flow:column wrap;
+}
+.book-in2{
+    margin-left: -41%;
+}
 }

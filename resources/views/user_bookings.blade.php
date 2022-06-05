@@ -13,16 +13,16 @@
 @include('layouts.nav')
 <div class="info">
 <div class="info-in biginp">
-<p class="lab fontclass">Name</p>
+<p class="lab fontclass">Name:</p>
     <input type="text" name="name" id="" value = "{{$user->name}}" readonly>
 </div>
 <div class="info-in smallinp">
-    <p class="lab fontclass">Total Bookings</p>
+    <p class="lab fontclass">Total Bookings:</p>
     <input type="text" name="number" id="" value = "{{$count}}" readonly>
 </div>
 </div>
     <div class="table-responsive">
-        <table class="table table-hover table-sm">
+        <table class="table table-hover table-sm" id="res">
             <thead class=" thead-dark">
               <tr>
                 <th scope="col">ID</th>
