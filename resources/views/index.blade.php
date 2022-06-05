@@ -24,7 +24,7 @@
                     <div class="text">
                         <h1><font color="#8A191D">Namaste</font></h1>
                         <h2><font color="#8A191D">We bow to the divinity within you.</font></h2>
-                        <p>On the outer edge of the busy tourist hub of Thamel, The Malla Hotel also has a long and storied past. Its rooms have all been newly renovated to provide modern, up to date comforts, and whether you're here for business, leisure or an event, this is not just a place to stay, but a bit of history to savor. Wander in the beautiful garden, take a dip in the pool, try your luck at the casino, or visit the newly updated Shanti Spa, equipped with five massage rooms and a renovated steam and sauna room. Extensive yoga and meditation services are also available, for an unforgettable personalized experience.</p>
+                        <p>On the outer edge of the busy tourist hub of Pokhara, The Hotel XYZ also has a long and storied past. Its rooms have all been newly renovated to provide modern, up to date comforts, and whether you're here for business, leisure or an event, this is not just a place to stay, but a bit of history to savor. Wander in the beautiful garden, take a dip in the pool, try your luck at the casino, or visit the newly updated Shanti Spa, equipped with five massage rooms and a renovated steam and sauna room. Extensive yoga and meditation services are also available, for an unforgettable personalized experience.</p>
                     </div>
                     <div class="row">
                         <div class="column1">

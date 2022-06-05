@@ -12,7 +12,17 @@ body {
   }
   h2{
     text-align: center;
+    font-family: 'Merriweather', serif;
+    color: #8A191D;
+    margin-top: 40px;
   }
+
+  button{
+    background-color: #8A191D;
+    color: white;
+    cursor: pointer;
+  }
+
   .text{
     font-family: century 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
@@ -52,8 +62,11 @@ body {
   #info th {
     padding-top: 12px;
     padding-bottom: 12px;
-    background-color: #04AA6D;
+    background-color: #8A191D;
     color: white;
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
+    font-size: 18px;
   }
 
 /* infograph */

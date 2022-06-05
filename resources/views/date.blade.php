@@ -49,7 +49,7 @@
   @include('layouts.nav')
   <div class = "wrapper">
     
-    <div class = "title">Pick dates</div>
+    <div class = "title">Schedule Your Dates</div>
     {{-- <div class = "container"> --}}
       
         <form action="{{route('choose.rooms')}}" method="get">
@@ -67,6 +67,15 @@
                 </div>
             </div>
             <div class ="rooms-choose">
+              <div class="nums">
+                <p id="change">Room Type</p>
+                <select>
+                  <option>Select Room</option>
+                  <option>Standard Room</option>
+                  <option>Deluxe Room</option>
+                  <option>Suite Room</option>
+                </select>
+              </div>
               <div class="nums">
                 <p id = "change">No. of Rooms</p>
                 <select name="rooms" id="">

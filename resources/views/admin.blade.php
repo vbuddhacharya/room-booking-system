@@ -54,6 +54,7 @@
                             <button class="btn btn-outline-danger btn-sm">Delete</button>
                             </form></td>
                         </tr>
+
                 @endforeach
             </tbody>
           </table>
