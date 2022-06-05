@@ -1,0 +1,54 @@
+
+.info{
+    display:flex;
+    flex-flow:row wrap;
+    align-items: center;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+    margin-top: 1%
+}
+.info-1{
+    display:flex;
+    flex-flow:row wrap;
+    align-items: center;
+    box-sizing: border-box;
+}
+.info-in{
+    margin-left: 5%;
+    display: flex;
+    flex-flow: row wrap;
+}
+.fontclass{
+    font-size:101%;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+input[type=text]{
+    width: 13%;
+    border:none;
+    font-size:100%;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    /* border-bottom: 2px solid rgba(0,0,0,0.2); */
+    padding-left: 3%;
+padding-right: 2%;
+}
+.smallinp input[type=text]{
+    width:12%;
+}
+.biginp input[type=text]{
+    width:45%
+}
+.lab{
+    margin-left: 3%;
+}
+@media (max-width: 730px){
+    input[type=text]{
+        width: 25%;
+        font-size:80%;
+  }
+  .fontclass{
+    font-size:89%;
+  }
+}

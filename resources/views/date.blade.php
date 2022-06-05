@@ -6,6 +6,7 @@
   <title>Booking</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="{{asset('/css/booking.css')}}">
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
@@ -45,25 +46,47 @@
   </script>
 </head>
 <body>
-    @include('layouts.nav');
-    <div class = "content">
+  @include('layouts.nav')
+  <div class = "wrapper">
+    
+    <div class = "title">Schedule Your Dates</div>
+    {{-- <div class = "container"> --}}
+      
         <form action="{{route('choose.rooms')}}" method="get">
           @csrf
+          
+          <div class="form-container">
             <div class = "date">
-                <label for="from">From</label>
-                <input type="text" id="from" name="from" value="{{old('from')}}">
-                <label for="to">to</label>
-                <input type="text" id="to" name="to" value="{{old('to')}}">
+                <div class = "date-element">
+                  <label for="from">Arrival</label>
+                  <input type="text" id="from" name="from" value="{{old('from')}}">
+                </div>
+                <div class = "date-element">
+                  <label for="to">Departure</label>
+                  <input type="text" id="to" name="to" value="{{old('to')}}">
+                </div>
             </div>
             <div class ="rooms-choose">
-                <label for="rooms">No. of Rooms</label>
+              <div class="nums">
+                <p id="change">Room Type</p>
+                <select>
+                  <option>Select Room</option>
+                  <option>Standard Room</option>
+                  <option>Deluxe Room</option>
+                  <option>Suite Room</option>
+                </select>
+              </div>
+              <div class="nums">
+                <p id = "change">No. of Rooms</p>
                 <select name="rooms" id="">
-                    @for($i=1;$i<=10;$i++)
-                        <option value = "{{$i}}" @selected(old('rooms')==$i)>{{$i}}</option>
-                    @endfor
-                </select><br>
-                <label for="guests">No. of Guests(Max 4 in each room)</label>
-                <input type="number" name="guests" id="">
+                  @for($i=1;$i<=$num;$i++)
+                      <option value = "{{$i}}" @selected(old('rooms')==$i)>{{$i}}</option>
+                  @endfor
+              </select><br>
+              </div>
+              <div class="nums">
+                <p id="change">No. of Guests (Max 4 in each room)</p>
+                <input type="text" name="guests" id="">
                 @if ($errors->any())
                   <div class="alert alert-danger">
                           @foreach ($errors->all() as $error)
@@ -71,10 +94,14 @@
                           @endforeach
                   </div>
               @endif
+                </div>
                 <br>
+              </div>
                 <button type="submit">Confirm</button>
-            </div>
+            
+          </div>
         </form>
-    </div>
+    {{-- </div> --}}
+  </div>
 </body>
 </html>
