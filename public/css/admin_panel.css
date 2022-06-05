@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+    
+}
+body{
+    background-color: #F5F5F5;
+}
+.text-1{
+    font-size:25px;
+    font-family: Georgia, serif;
+    text-align:center;
+    margin-top: 2%;
+
+}
+.bl{
+    /* display:block;
+    overflow: scroll; */
+    max-height: 300px;
+}

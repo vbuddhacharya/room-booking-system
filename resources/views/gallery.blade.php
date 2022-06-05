@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{asset('css/gallery.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style2.css')}}">
     <title>Gallery</title>
 </head>
 <body>
-@include('layouts.nav')
+    <div class="container">
+    @include('layouts.nav')
     <div class="banner">
-        <img src="{{asset('images/servicesphotos/servicebg.jpg')}}" width="1864px">
+        <img src="{{asset('images/servicesphotos/servicebg.jpg')}}">
         <div class="logo">
-            <img src="{{asset('images/logoillustration/mainlogo.png')}}" width="230px" height="270px">
+            <img src="{{asset('images/logoillustration/mainlogo.png')}}">
         </div>
     </div>
     <section class="photo" id="Photo">
-        <div class="container">
-            <div class="row">
+        <div class="items">
+            <div class="item">
                 <div class="section-title text-center">
                     <h1>Gallery</h1>
                 </div>
             </div>
-            <div class="row">
+            <div class="item">
                 <div class="filter-buttons">
                     <ul id="filter-btns">
                         <li class="active" data-target="all">ALL</li>
@@ -33,7 +34,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="row">
+            <div class="item">
                 <div class="photo-gallery">
   
                     <div class="item" data-id="Rooms">
@@ -92,6 +93,7 @@
             </div>
         </div>
     </section>
+</div>
 </body>
 </html>
 

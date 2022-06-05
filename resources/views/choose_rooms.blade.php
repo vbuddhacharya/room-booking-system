@@ -46,7 +46,7 @@
         <div class = "room-form">
             <div class = "nums">
             <p id = "change">Contact</p>
-            <input type="text" name = "contact">
+            <input type="text" name = "contact"  value="{{old('contact')}}">
             </div>
             
             <div class = "choose">

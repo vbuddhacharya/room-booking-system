@@ -54,8 +54,18 @@
       
         <form action="{{route('choose.rooms')}}" method="get">
           @csrf
-          
+          @if ($errors->any())
+                <div class="alert alert-danger">
+                    <br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
           <div class="form-container">
+            
             <div class = "date">
                 <div class = "date-element">
                   <label for="from">Arrival</label>
@@ -66,16 +76,6 @@
                   <input type="text" id="to" name="to" value="{{old('to')}}">
                 </div>
             </div>
-            <div class ="rooms-choose">
-              <div class="nums">
-                <p id="change">Room Type</p>
-                <select>
-                  <option>Select Room</option>
-                  <option>Standard Room</option>
-                  <option>Deluxe Room</option>
-                  <option>Suite Room</option>
-                </select>
-              </div>
               <div class="nums">
                 <p id = "change">No. of Rooms</p>
                 <select name="rooms" id="">
@@ -87,20 +87,15 @@
               <div class="nums">
                 <p id="change">No. of Guests (Max 4 in each room)</p>
                 <input type="text" name="guests" id="">
-                @if ($errors->any())
-                  <div class="alert alert-danger">
-                          @foreach ($errors->all() as $error)
-                              {{ $error }} <br/>
-                          @endforeach
-                  </div>
-              @endif
+                
                 </div>
                 <br>
               </div>
                 <button type="submit">Confirm</button>
-            
+                
           </div>
         </form>
+        
     {{-- </div> --}}
   </div>
 </body>

@@ -63,7 +63,7 @@ class BookingController extends Controller
                 $interval = $datetime1->diff($datetime2);
                 $days = $interval->format('%a');
                 $booking->days = $days;
-               // $booking->total = $request->total;
+                $booking->total = $request->total;
                 $booking->save();
                 foreach($request->roomNo as $rm){
                     $r = Room::find($rm);
@@ -146,6 +146,11 @@ class BookingController extends Controller
         return view('date',compact('num'));
     }
     public function roomView(Request $request){
+        $validated = $request->validate([
+            'from' => ['required'],
+            'to' => 'required',
+            'guests' =>'required',
+            ]);
         $guests = $request->guests;
         $rooms = $request->rooms;
         $values = ($request->except('_token'));

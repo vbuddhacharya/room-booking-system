@@ -58,7 +58,7 @@
                     <option value="Double">Double</option>
                 </select>
             </div> 
-            
+            Rate: <input type="number" name="rate" id=""><br>
             <br>
             <input type="hidden" name="booked" value = '0'>
             <center>

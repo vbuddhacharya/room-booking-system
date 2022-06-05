@@ -4,6 +4,7 @@
     flex-flow:row wrap;
     align-items: center;
     box-sizing: border-box;
+    margin-left:5%;
 }
 .info-1{
     display:flex;
@@ -18,8 +19,15 @@
 }
 .fontclass{
     font-size:101%;
-    font-weight: 500;
+    font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.text-1{
+    font-size:25px;
+    font-family: Georgia, serif;
+    text-align:center;
+    margin-top: 2%;
+
 }
 input[type=text]{
     width: 13%;

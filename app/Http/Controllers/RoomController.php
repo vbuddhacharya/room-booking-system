@@ -54,7 +54,7 @@ class RoomController extends Controller
         $newRoom->size = $request->size;
         $newRoom->booked = $request->booked;
         if ($newRoom->save())
-            return redirect()->route('admin');
+            return redirect()->route('admin.panel');
         else
             return view('add_room');
     }
@@ -112,7 +112,7 @@ class RoomController extends Controller
         $room->size = $request->size;
         $room->booked = $request->booked;
         $room->save();
-        return redirect()->route('admin');
+        return redirect()->route('admin.panel');
     }
 
     /**
@@ -126,7 +126,7 @@ class RoomController extends Controller
         //
         $room = Room::find($id);
         $room->delete();
-        return redirect()->route('admin');
+        return redirect()->route('admin.panel');
     }
     public function roomBookings(Request $request){
         $rooms = Room::find($request->id);

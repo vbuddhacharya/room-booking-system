@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{asset('/css/roombook.css')}}">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <title>Document</title>
@@ -30,9 +31,9 @@
     <input type="text" name="type" id="" value = "{{$rooms->type}}" readonly>
     <label for="number">Size</label>
     <input type="text" name="size" id="" value = "{{$rooms->size}}" readonly> --}}
-    <h4>Bookings</h4>
+    <div class="text-1">Bookings</div>
     <div class="table-responsive">
-        <table class="table table-hover table-sm">
+        <table class="table table-hover table-sm" style="margin-left:8%; width:80%">
             <thead class=" thead-dark">
               <tr>
                 <th scope="col">ID</th>
