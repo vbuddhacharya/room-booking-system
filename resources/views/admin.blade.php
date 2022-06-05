@@ -80,7 +80,7 @@
                 </div>
                 <div class = "admin">
                     
-                    <h2>Admininstrator Information</h2>
+                    <h2>Administrator Information</h2>
                     <table id="info" width=10px>
                         <tr><th>User ID</th><th>Name</th><th>Email</th><th>Actions</th>
                         </tr>
