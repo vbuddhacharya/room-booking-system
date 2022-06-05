@@ -4,8 +4,10 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel = "icon" href = "{{asset('images/logoillustration/mainlogo.png')}}" type = "image/png">
         <title>XYZ Hotel</title>
         <link rel="stylesheet" href="{{asset('css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('css/footer.css')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
 
@@ -61,9 +63,6 @@
                         <h5>Suite Room</h5>
                         <p>Enjoy an amazing stay in our comfortable suite room for our vip guest. It is now also available for family tourist including 55" Smart LED TV, bathtub & independent high speed Wi-Fi.</p>
                         <a href="" target="_self" class="booknow-btn">Book Now</a>
-                    </div>
-                    <div class="btndiv">
-                        <a href="" target="_self" class="btn1">See More</a>
                     </div>
                 </div>
             </div>

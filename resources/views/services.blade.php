@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{{asset('css/style1.css')}}">
+        <link rel="stylesheet" href="{{asset('css/footer.css')}}">
+        <link rel = "icon" href = "{{asset('images/logoillustration/mainlogo.png')}}" type = "image/png">
         <title>Services</title>
     </head>
     <body>
@@ -106,5 +108,14 @@
                 </div>
             </div>
         </div>
+        <footer class="footer">
+            <div class="footer-info">
+                Lakeside,Pokhara,Nepal<br/>
+                <a href="mailto:info@xyzhotel.com">info@xyzhotel.com</a><br/>
+                +977 1 4481385, +977 1 4456851, +977 1 4568710<br/>
+                Copyright © 2022 The XYZ Hotel. All Right Reserved.<br/>
+                Website by Team-B
+            </div>
+        </footer>
     </body>
 </html>

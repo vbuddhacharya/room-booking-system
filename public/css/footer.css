@@ -1,0 +1,20 @@
+.footer {
+    padding: 20px; /* Some padding */
+    text-align: center; /* Center text*/
+    background: #8A191D; /* Grey background */
+    height: 110px;/*optional*/
+  }
+  
+  .footer-info {
+    font-family: century 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: block;
+    color: white;
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+  .footer-info a{
+    font-family: century 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    text-decoration: none;
+  }

@@ -135,4 +135,10 @@ class RoomController extends Controller
     public function standardView(){
         return view('room1');
     }
+    public function deluxeView(){
+        return view('room2');
+    }
+    public function suiteView(){
+        return view('room3');
+    }
 }

@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{asset('css/style2.css')}}">
+    <link rel="stylesheet" href="{{asset('css/footer.css')}}">
+    <link rel = "icon" href = "{{asset('images/logoillustration/mainlogo.png')}}" type = "image/png">
     <title>Gallery</title>
 </head>
 <body>
@@ -25,7 +27,8 @@
             </div>
             <div class="item">
                 <div class="filter-buttons">
-                    <ul id="filter-btns">
+                    <ul id="filter-btns" class="buton">
+                        
                         <li class="active" data-target="all">ALL</li>
                         <li data-target="Rooms">Rooms</li>
                         <li data-target="Restaurant">Restaurant</li>
@@ -36,8 +39,7 @@
             </div>
             <div class="item">
                 <div class="photo-gallery">
-  
-                    <div class="item" data-id="Rooms">
+                    <div class="photo" data-id="Rooms">
                         <div class="inner">
                             <img src="{{asset('images/galleryphotos/room1.jpg')}}" alt="error">
                             <img src="{{asset('images/galleryphotos/room2.jpg')}}" alt="error">
@@ -56,7 +58,7 @@
                         </div>
                     </div>
   
-                    <div class="item" data-id="Restaurant">
+                    <div class="photo" data-id="Restaurant">
                         <div class="inner">
                             <img src="{{asset('images/galleryphotos/res1.jpg')}}" alt="error">
                             <img src="{{asset('images/galleryphotos/res2.jpg')}}" alt="error">
@@ -69,7 +71,7 @@
                         </div>
                     </div>
   
-                    <div class="item" data-id="Event-Rooms">
+                    <div class="photo" data-id="Event-Rooms">
                         <div class="inner">
                             <img src="{{asset('images/galleryphotos/con1.jpg')}}" alt="error">
                             <img src="{{asset('images/galleryphotos/con2.jpg')}}" alt="error">
@@ -79,7 +81,7 @@
                         </div>
                     </div>
   
-                    <div class="item" data-id="Interiors">
+                    <div class="photo" data-id="Interiors">
                         <div class="inner">
                             <img src="{{asset('images/galleryphotos/in1.jpg')}}" alt="error">
                             <img src="{{asset('images/galleryphotos/in2.jpg')}}" alt="error">
@@ -94,6 +96,15 @@
         </div>
     </section>
 </div>
+<footer class="footer">
+    <div class="footer-info">
+        Lakeside,Pokhara,Nepal<br/>
+        <a href="mailto:info@xyzhotel.com">info@xyzhotel.com</a><br/>
+        +977 1 4481385, +977 1 4456851, +977 1 4568710<br/>
+        Copyright © 2022 The XYZ Hotel. All Right Reserved.<br/>
+        Website by Team-B
+    </div>
+</footer>
 </body>
 </html>
 

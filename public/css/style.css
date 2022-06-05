@@ -284,8 +284,8 @@ body {
     width: 80%;
     display: flex;
     margin-top: 90px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: -8%;
+    /* margin-right: auto; */
     padding-left: 241px;
     margin-bottom: 30px;
   }
@@ -326,7 +326,7 @@ body {
   .services .btndiv{
     width: 80%;
     margin-top: 45px;
-    margin-left: auto;
+    margin-left: -20%;
     margin-right: auto;
     padding-left: 865px;
   }
@@ -425,11 +425,11 @@ body {
 
 /*footer*/
 
-.footer {
-  padding: 20px; /* Some padding */
-  text-align: center; /* Center text*/
-  background: #8A191D; /* Grey background */
-  height: 300px;/*optional*/
+/* .footer {
+  padding: 20px; 
+  text-align: center;
+  background: #8A191D;
+  height: 300px;
 }
 
 .footer-info {
@@ -444,7 +444,7 @@ body {
   font-family: century 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: white;
   text-decoration: none;
-}
+}  */
 /*admin*/
 .dash{
   width: 100%;
