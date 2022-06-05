@@ -34,9 +34,24 @@ body {
       /* border: 1vh solid; */
   }
   table{
-    max-height: 20%;
+    max-height: 300px;
+    height:20vh;
     width: 60vw;
+    overflow: auto;
+    display:block;
   }
+  /* thead, tbody{
+    display: block;
+    width:100%;
+  }
+  tbody{
+    height:100px;
+    overflow:auto;
+  } */
+  .bookings table{
+    width:90vw;
+  }
+
   td, th{
     border: 1px solid #ddd;
     padding: 8px;

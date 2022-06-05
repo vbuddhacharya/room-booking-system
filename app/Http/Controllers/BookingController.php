@@ -139,7 +139,7 @@ class BookingController extends Controller
         //
         $book = Booking::find($id);
         $book->delete();
-        return redirect()->route('admin');
+        return redirect()->route('admin.panel');
     }
     public function dateView(){
         $num = Room::all()->count();
