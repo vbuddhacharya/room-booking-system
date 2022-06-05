@@ -23,6 +23,7 @@ return new class extends Migration
             $table->bigInteger('no_of_people');
             $table->bigInteger('no_of_rooms');
             $table->string('contact');
+            $table->bigInteger('total');
             $table->timestamps();
         });
     }

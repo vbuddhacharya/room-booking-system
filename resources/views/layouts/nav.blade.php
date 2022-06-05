@@ -19,7 +19,7 @@
             <a href="{{route('gallery')}}">Gallery</a>
             <a href="{{route('date')}}">Book Now</a>
             @if(Auth::check() && Auth::user()->isAdmin==1)
-                <a href = "{{route('admin')}}">Administrator</a>
+                <a href = "{{route('admin.panel')}}">Administrator</a>
             @endif
             @if (Auth::check())
             
