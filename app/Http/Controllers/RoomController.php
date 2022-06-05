@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class RoomController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -131,5 +132,7 @@ class RoomController extends Controller
         $rooms = Room::find($request->id);
         return view('room_bookings',compact('rooms'));
     }
-    
+    public function standardView(){
+        return view('room1');
+    }
 }

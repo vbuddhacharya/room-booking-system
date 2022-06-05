@@ -1,0 +1,333 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    /* justify-content: center; */
+    background: #F5F5F5;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: scroll;
+}
+.wrapper{
+    position: relative;
+    max-width: 538px;
+  width: 100%;
+  background: #fff;
+  padding: 40px 30px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  /* perspective: 2700px; */
+  align-self: center;
+  margin-top: 5%; 
+    /* display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    ; */
+    overflow: auto;
+}
+
+.container{
+    display:flex;
+    flex-flow:row ;
+    justify-content: center;
+    /* flex-grow: 1; */
+    /* margin-top:25%; */
+    padding-left:20%;
+    padding-right: 20%;
+    /* padding-top: 5%; */
+    max-width:75vw;
+}
+.form-container{
+    display:flex;
+    flex-flow: column wrap;
+    align-self: center;
+    /* padding:20%; */
+    margin-top: 3vh;
+    /* border-color: #333; */
+    border-top: 1px solid crimson;
+    padding-left:4%;
+    padding-right: 3%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+
+}
+.wrapper > h2{
+    font-family: 'Merriweather', serif;
+}
+label{
+    flex: 1 0 4px;
+    max-width: 100%;
+    display:block;
+    font-size: 95%;
+    margin-left: 2%;
+}
+.text-1{
+    margin-left:2%;
+    margin-top:2%;   
+/* line-height: 2; */
+    margin: 0;
+    font-size: 15px;
+  font-weight: 400;
+  color: #333;
+  width: 26%;
+}
+label + *{
+    flex: 1 0 20px;
+}
+button {
+    margin-left: auto;
+    margin-top: 5%;
+    padding: 8px 16px;
+    border: none;
+    background: #333;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    border-radius: 10px;
+    /* font-weight: 500px; */
+  }
+  button input:hover{
+    background: #8A191D;
+  }
+
+.date{
+    display:flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+.rooms-choose{
+    display:flex;
+    flex-flow: column;
+align-items: flex-start;
+    /* margin-top: -3%; */
+margin-bottom: 1%;
+gap: 2%;
+}
+.nums{
+    align-self:first baseline;
+    display:flex;
+    flex-flow:row wrap;
+    /* align-items: space-between; */
+    width:100%;
+    gap: 29%;
+    /* margin-bottom: -9%; */
+}
+input[type=text]{
+    width: 19%;
+    border:none;
+    /* border-bottom: 2px solid black; */
+    /* border-radius: 5px; */
+    font-size: 15px;
+    font-weight: 500;
+    outline: none;
+    /* padding: 0 30px; */
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+    padding-left: 5%;
+}
+input::focus{
+    border-color: #8A191D;
+}
+
+.nums input{
+    width: 17%;
+margin-left: 4px;
+padding-left: 14px;
+}
+input{
+    margin:2%;
+    padding:2%;
+}
+select{
+    width:46%;
+    padding: 10px 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  margin-left: -5px;
+}
+.change{
+    width: 60%;
+margin-left: 6%;
+margin-right: 6%;
+}
+.choose{
+    display:flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+.room-form{
+    display:flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.room-form .nums{
+    gap: 13%;
+}
+.room{
+    display: flex;
+    flex-flow: row wrap;
+width: 100%;
+margin-bottom: 2%;
+margin-top: 2%;
+}
+.room-choice{
+    width: 100%;
+/* gap: 3%; */
+display: flex;
+    padding-top: 1%;
+align-items: center;
+flex-flow: row wrap;
+margin-top: -6%;
+}
+.buttons{
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: 52%;
+    margin-top: 6%;
+    cursor:pointer;
+}
+hr{
+    /* color: #333; */
+    border-top: 1px solid rgb(99, 99, 99);
+    margin-top: 5%;
+}
+.form-content .input-box input:focus,
+.form-content .input-box input:valid{
+  border-color: #8A191D;
+}
+/* .input-box {
+    display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin: 10px 0;
+  position: relative;
+  } */
+.title{
+    position: relative;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+  }
+.con{
+    gap: 13%;
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    align-self: center;
+    margin-bottom: 5%;
+}
+.con input{
+    width: 49%;
+    margin-bottom: 4%;
+}
+.con .change{
+    width: 17%;
+    margin-top: 1%;
+padding-bottom: 3%;
+}
+#info{
+    margin-top: 2%;
+}
+#info-1{
+    margin-top: 5%;
+}
+.room-num{
+    display:flex;
+    flex-flow: row wrap;
+align-items: center;
+margin-top: 2%;
+margin-bottom: 2%;
+}
+.room-num .change{
+    width: 15%;
+}
+.room-choice input[type=text]{
+    border-bottom: none;
+}
+.total #change{
+    width: 56%
+}
+
+/* Booking confirmed */
+.book{
+    display:flex;
+    align-items: center;
+    flex-flow:row wrap;
+}
+.book .change{
+    width: 19%;
+    margin-left: 2%;
+    margin-right: 3%;
+}
+.book .book-1{
+    width:13%;
+}
+.book .book-2{
+    padding-left: 4%;
+width: 30%;
+margin-left: -6%;
+}
+  @media (max-width: 730px){
+    .rooms-choose{
+        flex-flow: row wrap;
+        margin-top: -6%;
+    }
+    .nums{
+        margin-top: 10%;
+    }
+    .change{
+        width: 56%;
+    }
+    button{
+        /* margin-right: 130px; */
+        margin-left: 17px;
+        margin-top: 10%;
+        margin-bottom: -2%;
+    }
+    .buttons{
+        margin-left: 3%;
+    margin-top: -3%;
+    }
+    input[type=text]{
+        width: 25%;
+  }
+  .room-choice{
+    margin-top: -5%;
+  }
+.room-num .change{
+    width: 52%;
+}
+.total .change{
+    margin-right: 45%;
+    width: auto;
+}
+.date{
+    display: flex;
+flex-flow: column;
+align-items: center;
+margin-bottom: 14%;
+}
+label{
+    margin-left: -6%;
+}
+.date input[type=text]{
+    margin-left: -6%;
+    width: 41%;
+}
+.con input[type=text]{
+    width: 52%;
+padding-left: 6%;
+}
+    #info{
+        margin-top: 1%;
+    }
+}

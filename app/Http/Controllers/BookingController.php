@@ -47,6 +47,7 @@ class BookingController extends Controller
             
             case 'confirm':
                 //dd($request);
+                
                 $booking = new Booking();
                 $booking->from_date = date('Y-m-d',strtotime($request->from));
                 $booking->to_date = date('Y-m-d',strtotime($request->to));
@@ -77,7 +78,7 @@ class BookingController extends Controller
                     $r->booked = 0;
                     $r->save();
                 }
-                return redirect('date')->withInput();
+                return redirect()->route('date')->withInput();
                 break;
         }
     }
@@ -89,6 +90,8 @@ class BookingController extends Controller
             $relation->room_id = $rm;
             $relation->save();
         }
+        $book = Booking::find($booking_id);
+        return view('booked',compact('book'));
     }
 
     /**
@@ -159,6 +162,9 @@ class BookingController extends Controller
         //dd($request);
         switch ($request->action){
             case 'confirm':
+                $validated = $request->validate([
+                    'contact' => ['required', 'regex:/^((98)|(97))[0-9]{8}/'],
+                    ]);
                 $values = ($request->except('_token'));
                 $fdate = $request->from;
                 $tdate = $request->to;
@@ -166,6 +172,9 @@ class BookingController extends Controller
                 $datetime2 = new DateTime($tdate);
                 $interval = $datetime1->diff($datetime2);
                 $days = $interval->format('%a');
+                if($days==0){
+                    $days=1;
+                }
                 $flag=1;
                 $total = 0;
                 
@@ -173,7 +182,13 @@ class BookingController extends Controller
                 $depart = date('Y-m-d',strtotime($tdate));
                 for($i=0;$i<$request->rooms;$i++){
                     $ra=0;
-                    $condition = ['location'=>$request->location[$i],'type'=>$request->type[$i],'size'=>$request->size[$i],'booked'=>0];
+                    if($request->location[$i]==0){
+                        $condition = ['type'=>$request->type[$i],'size'=>$request->size[$i],'booked'=>0];
+                    }
+                    else{
+                        $condition = ['location'=>$request->location[$i],'type'=>$request->type[$i],'size'=>$request->size[$i],'booked'=>0];
+                    }
+                    
                     $allRooms = Room::where($condition)->get();
                     $count = count($allRooms);
                     if ($count<1){
@@ -184,7 +199,7 @@ class BookingController extends Controller
                         $flagRoom=0;
                         foreach($allRooms as $room){
                             //dd($allRooms);
-                            $check = Booked_room::where('room_id','=','$room->id')->get();
+                            $check = Booked_room::where('room_id','=',$room->id)->get();
                             //dd($check);
                             if (!($check)){
                                 $flagRoom = 1;
@@ -193,8 +208,8 @@ class BookingController extends Controller
                             // dd($check);
                                 $flagBooked=0;
                                 foreach($check as $c){
-                                    dd($c);
-                                    $book = Booking::where('id','$c->booking_id')
+                                    //dd($c);
+                                    $book = Booking::where('id',$c->booking_id)
                                             ->where(function($query) use ($arrive, $depart){
                                                 $query->where(function($query) use ($arrive, $depart){
                                                     $query->where('from_date','<=',$arrive)
@@ -205,6 +220,7 @@ class BookingController extends Controller
                                                     ->where('to_date','>=',$depart);
                                                 });
                                             })->exists();
+                                    //dd($book);
                                     if($book){
                                         $flagBooked = 1;
                                         break;
