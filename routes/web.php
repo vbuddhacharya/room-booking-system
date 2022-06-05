@@ -67,7 +67,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/hotel/booking/rooms',[BookingController::class,'roomView'])->name('choose.rooms');
     Route::post('/hotel/booking/check',[BookingController::class,'verifyRooms'])->name('confirm.rooms');
     Route::post('/hotel/booking/store',[BookingController::class,'store'])->name('store.booking');
-    Route::post('/hotel/booking/delete',[BookingController::class,'destroy'])->name('delete.booking');
+    Route::post('/hotel/booking/delete/{id}',[BookingController::class,'destroy'])->name('delete.booking');
     Route::get('/hotel/booking/confirm',[BookingController::class,'confirmView'])->name('confirm');
 
 //view bookings
